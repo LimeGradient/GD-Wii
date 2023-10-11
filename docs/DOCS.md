@@ -3,3 +3,6 @@ You need to include stdio, stdlib, gccore, and wpad.h as the very basic for scri
 
 # Printing
 Make sure that the console was Initialized with <code>console_init(xfb,20,20,rmode->fbWidth,rmode->xfbHeight,rmode->fbWidth*VI_DISPLAY_PIX_SZ);</code> or some variation on this function. Then you want to printf which will print text to the screen. To move the text cursor you need to put <code>\x1b[r;cH</code> where R and C are row and column respectively. To set the color of text it is recommended to printf the cursor somewhere (ex. <code>printf("\x1b[1;1H]")</code>) then set the color using <code>\x1b[cm</code> where C is the color you want. Reset (0), Half bright colors (2), Reverse (7), Text color (30-37) and Background color (40-47)
+
+# Input
+Input is done all in the while loop. Using a u32 you read inputs (ex. <code>u32 pressed = WPAD_ButtonsDown(0);</code>). <code>WPAD_ButtonsDown(0);</code> is ran when a button is pressed and not again until the button is released. <code>WPAD_ButtonsUp(0);</code> is used when a button is released and not again until it is released again. <code>WPAD_ButtonsHeld(0);</code> is ran when a button is held. You check input with <code>if (pressed & WPAD_BUTTON)</code>. There is support for WiiMote, WiiMote Classic, and the Wii Guitar Hero
