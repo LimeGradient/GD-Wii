@@ -1,9 +1,3 @@
-/*---------------------------------------------------------------------------------
-
-	Simple demonstration of sprites using textured quads
-
----------------------------------------------------------------------------------*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,7 +15,7 @@
 static void *frameBuffer[2] = { NULL, NULL};
 static GXRModeObj *rmode;
 
-#define NUM_SPRITES 1024
+#define NUM_SPRITES 32
 
 //simple sprite struct
 typedef struct {
@@ -114,9 +108,10 @@ int main( int argc, char **argv ){
 
 	GX_InvalidateTexAll();
 
+	srand(time(NULL));
 	TPLFile spriteTPL;
 	TPL_OpenTPLFromMemory(&spriteTPL, (void *)textures_tpl,textures_tpl_size);
-	TPL_GetTexture(&spriteTPL,ballsprites,&texObj);
+	TPL_GetTexture(&spriteTPL,rand() % 3,&texObj);
 	GX_LoadTexObj(&texObj, GX_TEXMAP0);
 
 	guOrtho(perspective,0,479,0,639,0,300);
