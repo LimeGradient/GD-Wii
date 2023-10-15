@@ -1,4 +1,4 @@
-main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
+gxsprites.o: /Users/kevinburns/GD-Wii/examples/source/gxsprites.c \
  /opt/devkitpro/libogc/include/gccore.h \
  /opt/devkitpro/libogc/include/ogc/dsp.h \
  /opt/devkitpro/libogc/include/gctypes.h \
@@ -58,8 +58,8 @@ main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
  /opt/devkitpro/libogc/include/bte/bte.h \
  /opt/devkitpro/libogc/include/bte/bd_addr.h \
  /opt/devkitpro/libogc/include/ogc/tpl.h \
- /Users/kevinburns/GD-Wii/build/textures_tpl.h \
- /Users/kevinburns/GD-Wii/build/textures.h
+ /Users/kevinburns/GD-Wii/examples/build/textures_tpl.h \
+ /Users/kevinburns/GD-Wii/examples/build/textures.h
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:
 /opt/devkitpro/libogc/include/gctypes.h:
@@ -119,5 +119,5 @@ main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
 /opt/devkitpro/libogc/include/bte/bte.h:
 /opt/devkitpro/libogc/include/bte/bd_addr.h:
 /opt/devkitpro/libogc/include/ogc/tpl.h:
-/Users/kevinburns/GD-Wii/build/textures_tpl.h:
-/Users/kevinburns/GD-Wii/build/textures.h:
+/Users/kevinburns/GD-Wii/examples/build/textures_tpl.h:
+/Users/kevinburns/GD-Wii/examples/build/textures.h:

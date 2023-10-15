@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${vcpkgRoot}/x64-osx/include",
-                "/opt/devkitpro/libogc/include/**"
+                "/opt/devkitpro/libogc/include/**",
+                "/opt/devkitpro/devkitppc/powerpc-eabi/include/**"
             ],
             "defines": [],
             "macFrameworkPath": [
