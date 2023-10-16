@@ -109,7 +109,7 @@ int main( int argc, char **argv ){
 	srand(time(NULL));
 	TPLFile spriteTPL;
 	TPL_OpenTPLFromMemory(&spriteTPL, (void *)textures_tpl,textures_tpl_size);
-	TPL_GetTexture(&spriteTPL,rand() % 3,&texObj);
+	TPL_GetTexture(&spriteTPL,dialogIcon_018,&texObj);
 	GX_LoadTexObj(&texObj, GX_TEXMAP0);
 
 	guOrtho(perspective,0,479,0,639,0,300);
@@ -123,7 +123,7 @@ int main( int argc, char **argv ){
 	player.x = rand() % (640 - 32 ) << 8;
 	player.y = rand() % (480 - 32 ) << 8;
 	player.dx = (rand() & 0xFF) + 0x100;
-	player.dy = 0;
+	player.dy = (rand() & 0xFF) + 0x100;
 	player.image = dialogIcon_018;
 
 	while(1) {
@@ -144,7 +144,9 @@ int main( int argc, char **argv ){
 		guMtxTransApply (GXmodelView2D, GXmodelView2D, 0.0F, 0.0F, -5.0F);
 		GX_LoadPosMtxImm(GXmodelView2D,GX_PNMTX0);
 
-		drawSpriteTex(player.x >> 8, player.y >> 8, 16, 16, player.image);
+		player.x += player.dx;
+		player.y += player.dy;
+		drawSpriteTex(player.x >> 8, player.y >> 8, 64, 64, player.image);
 		GX_DrawDone();
 
 		GX_SetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
