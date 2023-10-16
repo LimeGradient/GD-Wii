@@ -43,8 +43,6 @@ int main( int argc, char **argv ){
 
 	GXColor background = {0, 0, 0, 0xff};
 
-	int i;
-
 	VIDEO_Init();
 
 	rmode = VIDEO_GetPreferredMode(NULL);
@@ -121,19 +119,12 @@ int main( int argc, char **argv ){
 
 	srand(time(NULL));
 
-	for(i = 0; i < NUM_SPRITES; i++) {
-		//random place and speed
-		sprites[i].x = rand() % (640 - 32 ) << 8;
-		sprites[i].y = rand() % (480 - 32 ) << 8 ;
-		sprites[i].dx = (rand() & 0xFF) + 0x100;
-		sprites[i].dy = (rand() & 0xFF) + 0x100;
-		sprites[i].image = rand() & 3;
-
-		if(rand() & 1)
-			sprites[i].dx = -sprites[i].dx;
-		if(rand() & 1)
-			sprites[i].dy = -sprites[i].dy;
-	}
+	Sprite player;
+	player.x = rand() % (640 - 32 ) << 8;
+	player.y = rand() % (480 - 32 ) << 8;
+	player.dx = (rand() & 0xFF) + 0x100;
+	player.dy = 0;
+	player.image = dialogIcon_018;
 
 	while(1) {
 
@@ -153,20 +144,7 @@ int main( int argc, char **argv ){
 		guMtxTransApply (GXmodelView2D, GXmodelView2D, 0.0F, 0.0F, -5.0F);
 		GX_LoadPosMtxImm(GXmodelView2D,GX_PNMTX0);
 
-		for(i = 0; i < NUM_SPRITES; i++) {
-			sprites[i].x += sprites[i].dx;
-			sprites[i].y += sprites[i].dy;
-
-			//check for collision with the screen boundaries
-			if(sprites[i].x < (1<<8) || sprites[i].x > ((640-32) << 8))
-				sprites[i].dx = -sprites[i].dx;
-
-			if(sprites[i].y < (1<<8) || sprites[i].y > ((480-32) << 8))
-				sprites[i].dy = -sprites[i].dy;
-
-			drawSpriteTex( sprites[i].x >> 8, sprites[i].y >> 8, 32, 32, sprites[i].image);
-		}
-
+		drawSpriteTex(player.x >> 8, player.y >> 8, 16, 16, player.image);
 		GX_DrawDone();
 
 		GX_SetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
