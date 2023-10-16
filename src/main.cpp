@@ -15,7 +15,7 @@
 static void *frameBuffer[2] = { NULL, NULL};
 static GXRModeObj *rmode;
 
-#define NUM_SPRITES 32
+#define PLAYER_SPEED 0x100
 
 //simple sprite struct
 typedef struct {
@@ -24,7 +24,6 @@ typedef struct {
 	int image;
 }Sprite;
 
-Sprite sprites[NUM_SPRITES];
 
 GXTexObj texObj;
 
@@ -122,8 +121,8 @@ int main( int argc, char **argv ){
 	Sprite player;
 	player.x = rand() % (640 - 32 ) << 8;
 	player.y = rand() % (480 - 32 ) << 8;
-	player.dx = (rand() & 0xFF) + 0x100;
-	player.dy = (rand() & 0xFF) + 0x100;
+	player.dx = PLAYER_SPEED + 0x100;
+	player.dy = 0x0;
 	player.image = dialogIcon_018;
 
 	while(1) {
@@ -146,7 +145,14 @@ int main( int argc, char **argv ){
 
 		player.x += player.dx;
 		player.y += player.dy;
+		if (player.x < (1<<8) || player.x > ((640-32) << 8)) {
+			player.dx = -player.dx;
+		}
+		if (player.y < (1<<8) || player.y > ((480-32) << 8)) {
+			player.dy = -player.dy;
+		}
 		drawSpriteTex(player.x >> 8, player.y >> 8, 64, 64, player.image);
+
 		GX_DrawDone();
 
 		GX_SetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
