@@ -1,4 +1,5 @@
 main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
+ /opt/devkitpro/portlibs/ppc/include/grrlib.h \
  /opt/devkitpro/libogc/include/gccore.h \
  /opt/devkitpro/libogc/include/ogc/dsp.h \
  /opt/devkitpro/libogc/include/gctypes.h \
@@ -53,13 +54,23 @@ main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
  /opt/devkitpro/libogc/include/ogc/mutex.h \
  /opt/devkitpro/libogc/include/ogc/system.h \
  /opt/devkitpro/libogc/include/ogc/wiilaunch.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__lib.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__inline.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_collision.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbComplex.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbGX.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbSimple.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_handle.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_settings.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h \
  /opt/devkitpro/libogc/include/wiiuse/wpad.h \
  /opt/devkitpro/libogc/include/wiiuse/wiiuse.h \
  /opt/devkitpro/libogc/include/bte/bte.h \
  /opt/devkitpro/libogc/include/bte/bd_addr.h \
- /opt/devkitpro/libogc/include/ogc/tpl.h \
- /Users/kevinburns/GD-Wii/build/textures_tpl.h \
- /Users/kevinburns/GD-Wii/build/textures.h
+ /opt/devkitpro/libogc/include/ogc/tpl.h
+/opt/devkitpro/portlibs/ppc/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:
 /opt/devkitpro/libogc/include/gctypes.h:
@@ -114,10 +125,19 @@ main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
 /opt/devkitpro/libogc/include/ogc/mutex.h:
 /opt/devkitpro/libogc/include/ogc/system.h:
 /opt/devkitpro/libogc/include/ogc/wiilaunch.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__lib.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__inline.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_collision.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbComplex.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbGX.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbSimple.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_handle.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_settings.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h:
 /opt/devkitpro/libogc/include/wiiuse/wpad.h:
 /opt/devkitpro/libogc/include/wiiuse/wiiuse.h:
 /opt/devkitpro/libogc/include/bte/bte.h:
 /opt/devkitpro/libogc/include/bte/bd_addr.h:
 /opt/devkitpro/libogc/include/ogc/tpl.h:
-/Users/kevinburns/GD-Wii/build/textures_tpl.h:
-/Users/kevinburns/GD-Wii/build/textures.h:

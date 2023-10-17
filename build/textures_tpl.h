@@ -6,7 +6,7 @@
 extern const uint8_t textures_tpl[];
 extern const uint8_t textures_tpl_end[];
 #if __cplusplus >= 201103L
-static constexpr size_t textures_tpl_size=87744;
+static constexpr size_t textures_tpl_size=26112;
 #else
-static const size_t textures_tpl_size=87744;
+static const size_t textures_tpl_size=26112;
 #endif
