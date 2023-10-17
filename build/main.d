@@ -69,7 +69,11 @@ main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
  /opt/devkitpro/libogc/include/wiiuse/wiiuse.h \
  /opt/devkitpro/libogc/include/bte/bte.h \
  /opt/devkitpro/libogc/include/bte/bd_addr.h \
- /opt/devkitpro/libogc/include/ogc/tpl.h
+ /opt/devkitpro/libogc/include/ogc/tpl.h \
+ /opt/devkitpro/libogc/include/fat.h \
+ /opt/devkitpro/libogc/include/libfatversion.h \
+ /Users/kevinburns/GD-Wii/build/player_png.h \
+ /Users/kevinburns/GD-Wii/build/GJ_square02_png.h
 /opt/devkitpro/portlibs/ppc/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:
@@ -141,3 +145,7 @@ main.o: /Users/kevinburns/GD-Wii/src/main.cpp \
 /opt/devkitpro/libogc/include/bte/bte.h:
 /opt/devkitpro/libogc/include/bte/bd_addr.h:
 /opt/devkitpro/libogc/include/ogc/tpl.h:
+/opt/devkitpro/libogc/include/fat.h:
+/opt/devkitpro/libogc/include/libfatversion.h:
+/Users/kevinburns/GD-Wii/build/player_png.h:
+/Users/kevinburns/GD-Wii/build/GJ_square02_png.h:
