@@ -6,7 +6,7 @@
 extern const uint8_t player_png[];
 extern const uint8_t player_png_end[];
 #if __cplusplus >= 201103L
-static constexpr size_t player_png_size=1001;
+static constexpr size_t player_png_size=10726;
 #else
-static const size_t player_png_size=1001;
+static const size_t player_png_size=10726;
 #endif

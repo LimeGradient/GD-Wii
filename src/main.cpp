@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 	WPAD_Init();
 	WPAD_SetDataFormat(WPAD_CHAN_0, WPAD_FMT_BTNS_ACC_IR);
 	
-	GRRLIB_texImg *test_png = GRRLIB_LoadTexturePNG(GJ_square02_png);
+	GRRLIB_texImg *test_png = GRRLIB_LoadTexturePNG(player_png);
 
 	vector2 velocity = Vector2(5,5);
 	vector2 position = Vector2(0,0);
@@ -52,10 +52,6 @@ int main(int argc, char* argv[]) {
 		GRRLIB_DrawImg((int)position.x, (int)position.y,test_png,0,1,1,0xFFFF00FF);
 		position.x += velocity.x;
 		position.y += velocity.y;
-		GRRLIB_Plot(ir1.sx, ir1.sy, 0xFFFF00FF);
-        GRRLIB_Plot(ir1.sx + 1, ir1.sy, 0xFFFF00FF);
-        GRRLIB_Plot(ir1.sx, ir1.sy + 1, 0xFFFF00FF);
-        GRRLIB_Plot(ir1.sx + 1, ir1.sy + 1, 0xFFFF00FF);
 		GRRLIB_Render();
 	}
 	GRRLIB_Exit();
