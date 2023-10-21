@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "inheritEnvironments": [
+        "msvc_x86"
+      ],
+      "name": "x86-Release",
+      "includePath": [
+        "${workspaceRoot}\\..\\..\\..\\..\\..\\grr\\GRRLIB\\GRRLIB\\GRRLIB",
+        "${env.INCLUDE}",
+        "${workspaceRoot}\\**",
+        "/devkitpro/libogc/include/**",
+        "/devkitpro/devkitppc/powerpc-eabi/include/**",
+        "/devkitpro/portlibs/ppc/include/**"
+      ],
+      "defines": [
+        "WIN32",
+        "NDEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "intelliSenseMode": "windows-msvc-x86"
+    }
+  ]
+}

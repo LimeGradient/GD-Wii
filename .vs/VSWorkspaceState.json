@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\data",
+    "\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\xavie\\Source\\Repos\\GD-Wii",
+  "SelectedNode": "\\data\\GJ_square02.png",
   "PreviewInSolutionExplorer": false
 }
