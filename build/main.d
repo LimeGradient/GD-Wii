@@ -1,4 +1,5 @@
-main.o: D:/Repos/src/main.cpp C:/devkitPro/portlibs/wii/include/grrlib.h \
+main.o: C:/Users/xavie/Source/Repos/GD-Wii/src/main.cpp \
+ C:/devkitPro/portlibs/wii/include/grrlib.h \
  C:/devkitPro/libogc/include/gccore.h \
  C:/devkitPro/libogc/include/ogc/dsp.h \
  C:/devkitPro/libogc/include/gctypes.h \
@@ -69,8 +70,9 @@ main.o: D:/Repos/src/main.cpp C:/devkitPro/portlibs/wii/include/grrlib.h \
  C:/devkitPro/libogc/include/bte/bte.h \
  C:/devkitPro/libogc/include/bte/bd_addr.h \
  C:/devkitPro/libogc/include/ogc/tpl.h C:/devkitPro/libogc/include/fat.h \
- C:/devkitPro/libogc/include/libfatversion.h D:/Repos/build/player_png.h \
- D:/Repos/build/GJ_square02_png.h
+ C:/devkitPro/libogc/include/libfatversion.h \
+ C:/Users/xavie/Source/Repos/GD-Wii/build/player_png.h \
+ C:/Users/xavie/Source/Repos/GD-Wii/build/GJ_square02_png.h
 C:/devkitPro/portlibs/wii/include/grrlib.h:
 C:/devkitPro/libogc/include/gccore.h:
 C:/devkitPro/libogc/include/ogc/dsp.h:
@@ -144,5 +146,5 @@ C:/devkitPro/libogc/include/bte/bd_addr.h:
 C:/devkitPro/libogc/include/ogc/tpl.h:
 C:/devkitPro/libogc/include/fat.h:
 C:/devkitPro/libogc/include/libfatversion.h:
-D:/Repos/build/player_png.h:
-D:/Repos/build/GJ_square02_png.h:
+C:/Users/xavie/Source/Repos/GD-Wii/build/player_png.h:
+C:/Users/xavie/Source/Repos/GD-Wii/build/GJ_square02_png.h:

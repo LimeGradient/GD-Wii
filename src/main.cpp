@@ -48,13 +48,15 @@ typedef struct {
 	vector2 hitboxVal1;
 	vector2 hitboxVal2;
 	int collisionType;
+	vector2 velocity;
+	bool isPlayer = false;
 
 }object;
 
-std::list<object> objectList = {};
+std::list<object*> objectList = {};
 
 typedef struct {
-	object New(GRRLIB_texImg* image, vector2 position, vector2 hitboxVal1, vector2 hitboxVal2, int collisionType = 0, vector2 imgScale = Vector2.New(1,1), vector2 pivot = Vector2.New(0, 0), float rotation = 0, bool hasCollision = true, bool isTrigger = false) {
+	object New(GRRLIB_texImg* image, vector2 position, vector2 hitboxVal1, vector2 hitboxVal2, int collisionType = 1, vector2 imgScale = Vector2.New(1,1), vector2 velocity = Vector2.New(0,0), float rotation = 0, vector2 pivot = Vector2.New(0, 0), bool hasCollision = true, bool isTrigger = false) {
 		object _object;
 		_object.image = image;
 		_object.position = position;
@@ -66,17 +68,30 @@ typedef struct {
 		_object.hitboxVal1 = hitboxVal1;
 		_object.hitboxVal2 = hitboxVal2;
 		_object.collisionType = collisionType;
-	    objectList.push_back(_object);
+		_object.velocity = velocity;
+	    objectList.push_back(&_object);
 		return _object;
 	}
 
 }ObjectFunctions;
 ObjectFunctions Object;
 
-void ObjectChecks(object player) {
-	for(object obj : objectList)
+void ObjectChecks(object &player) {
+	vector2 oldPos = player.position;
+	for(auto &obj : objectList)
 	{
-		GRRLIB_DrawImg((int)obj.position.x, (int)obj.position.y, obj.image, 0, obj.imgScale.x, obj.imgScale.y, 0xFFFFFFFF);
+		obj->position = Vector2.Add(obj->position, obj->velocity);
+		if (obj->isPlayer == false) {
+			switch (obj->collisionType) {
+			case 1: //collision type 1 is a box
+				if (obj->position.x + obj->hitboxVal1.x <= player.position.x + player.hitboxVal2.x && obj->position.x + obj->hitboxVal2.x >= player.position.x + player.hitboxVal1.x && obj->position.y + obj->hitboxVal1.y <= player.position.y + player.hitboxVal2.y && obj->position.y + obj->hitboxVal2.y >= player.position.y + player.hitboxVal1.y) {
+					player.velocity = Vector2.New(0, 0);
+				}
+				break;
+			}
+
+		}
+		GRRLIB_DrawImg((int)obj->position.x, (int)obj->position.y, obj->image, 0, obj->imgScale.x, obj->imgScale.y, 0xFFFFFFFF);
 	}
 }
 
@@ -90,11 +105,9 @@ int main(int argc, char* argv[]) {
 	GRRLIB_texImg* test_png = GRRLIB_LoadTexturePNG(player_png);
 	GRRLIB_texImg* test_ground_png = GRRLIB_LoadTexturePNG(GJ_square02_png);
 
-
-	vector2 velocity = Vector2.New(5, 5);
-
 	object Player = Object.New(test_png, Vector2.New(0, 0), Vector2.New(0, 0), Vector2.New(20, 20));
-
+	Player.velocity = Vector2.New(0, 5);
+	Player.isPlayer = true;
 	object TestGround = Object.New(test_ground_png, Vector2.New(0, 430), Vector2.New(0, 0), Vector2.New(80, 80));
 
 	while (1) {
@@ -107,7 +120,7 @@ int main(int argc, char* argv[]) {
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
 
-		Player.position = Vector2.Add(Player.position, velocity);
+		//Player.position = Vector2.Add(Player.position, velocity);
 
 		ObjectChecks(Player);
 		//GRRLIB_Rectangle(0, 430, 640, 50, 0xFFFFFFFF, true);
