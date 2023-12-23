@@ -73,7 +73,9 @@ main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
  /opt/devkitpro/libogc/include/fat.h \
  /opt/devkitpro/libogc/include/libfatversion.h \
  /Users/kevinburns/geometrydash-wii/GD-Wii/build/player_png.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii/build/player2_png.h \
  /Users/kevinburns/geometrydash-wii/GD-Wii/build/GJ_square02_png.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii/build/FreeMonoBold_ttf.h \
  /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h \
  /Users/kevinburns/geometrydash-wii/GD-Wii//include/Object.h \
  /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h
@@ -151,7 +153,9 @@ main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
 /opt/devkitpro/libogc/include/fat.h:
 /opt/devkitpro/libogc/include/libfatversion.h:
 /Users/kevinburns/geometrydash-wii/GD-Wii/build/player_png.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii/build/player2_png.h:
 /Users/kevinburns/geometrydash-wii/GD-Wii/build/GJ_square02_png.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii/build/FreeMonoBold_ttf.h:
 /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h:
 /Users/kevinburns/geometrydash-wii/GD-Wii//include/Object.h:
 /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h:

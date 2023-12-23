@@ -15,11 +15,15 @@
 
 // Image Includes
 #include "player_png.h"
+#include "player2_png.h"
 #include "GJ_square02_png.h"
+
+#include "FreeMonoBold_ttf.h"
 
 // Other Includes
 #include "Vector2.h"
 #include "Object.h"
+#include "SpriteLoading.h"
 
 void ObjectChecks(object &player) {
 	vector2 oldPos = player.position;
@@ -48,12 +52,17 @@ int main(int argc, char* argv[]) {
 	WPAD_SetDataFormat(WPAD_CHAN_0, WPAD_FMT_BTNS_ACC_IR);
 
 	GRRLIB_texImg* test_png = GRRLIB_LoadTexturePNG(player_png);
+	GRRLIB_texImg* test_png_2 = GRRLIB_LoadTexturePNG(player2_png);
 	GRRLIB_texImg* test_ground_png = GRRLIB_LoadTexturePNG(GJ_square02_png);
+
+	GRRLIB_ttfFont* testFont = GRRLIB_LoadTTF(FreeMonoBold_ttf, FreeMonoBold_ttf_size);
 
 	object Player = Object.New(test_png, Vector2.New(0, 0), Vector2.New(0, 0), Vector2.New(20, 20));
 	Player.velocity = Vector2.New(0, 5);
 	Player.isPlayer = true;
 	object TestGround = Object.New(test_ground_png, Vector2.New(0, 430), Vector2.New(0, 0), Vector2.New(80, 80));
+
+	srand(time(NULL));
 
 	while (1) {
 		WPAD_SetVRes(0, 640, 480);
@@ -64,10 +73,14 @@ int main(int argc, char* argv[]) {
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
+		GRRLIB_PrintfTTF(200, 200, testFont, "Hello TTF Font", 36, ((rand() % 0xFFFFFF) << 8) | 0xFF);
 
 		//Player.position = Vector2.Add(Player.position, velocity);
 
 		ObjectChecks(Player);
+		if (wpaddown & WPAD_BUTTON_A) {
+			SpriteLoading::SetSprite(Player, test_png_2);
+		}
 		//GRRLIB_Rectangle(0, 430, 640, 50, 0xFFFFFFFF, true);
 		//GRRLIB_DrawImg((int)Player.position.x, (int)Player.position.y, Player.image, 0, Player.scale.x, Player.scale.y, 0xFFFFFFFF);
 		//GRRLIB_DrawImg((int)TestGround.position.x, (int)TestGround.position.y, TestGround.image, 0, TestGround.scale.x, TestGround.scale.y, 0xFFFFFFFF);
