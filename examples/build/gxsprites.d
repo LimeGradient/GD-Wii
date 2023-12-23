@@ -1,4 +1,5 @@
-gxsprites.o: /Users/kevinburns/GD-Wii/examples/source/gxsprites.c \
+gxsprites.o: \
+ /Users/kevinburns/geometrydash-wii/GD-Wii/examples/source/gxsprites.c \
  /opt/devkitpro/libogc/include/gccore.h \
  /opt/devkitpro/libogc/include/ogc/dsp.h \
  /opt/devkitpro/libogc/include/gctypes.h \
@@ -58,8 +59,8 @@ gxsprites.o: /Users/kevinburns/GD-Wii/examples/source/gxsprites.c \
  /opt/devkitpro/libogc/include/bte/bte.h \
  /opt/devkitpro/libogc/include/bte/bd_addr.h \
  /opt/devkitpro/libogc/include/ogc/tpl.h \
- /Users/kevinburns/GD-Wii/examples/build/textures_tpl.h \
- /Users/kevinburns/GD-Wii/examples/build/textures.h
+ /Users/kevinburns/geometrydash-wii/GD-Wii/examples/build/textures_tpl.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii/examples/build/textures.h
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:
 /opt/devkitpro/libogc/include/gctypes.h:
@@ -119,5 +120,5 @@ gxsprites.o: /Users/kevinburns/GD-Wii/examples/source/gxsprites.c \
 /opt/devkitpro/libogc/include/bte/bte.h:
 /opt/devkitpro/libogc/include/bte/bd_addr.h:
 /opt/devkitpro/libogc/include/ogc/tpl.h:
-/Users/kevinburns/GD-Wii/examples/build/textures_tpl.h:
-/Users/kevinburns/GD-Wii/examples/build/textures.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii/examples/build/textures_tpl.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii/examples/build/textures.h:

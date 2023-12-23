@@ -1,150 +1,157 @@
-main.o: C:/Users/xavie/Source/Repos/GD-Wii/src/main.cpp \
- C:/devkitPro/portlibs/wii/include/grrlib.h \
- C:/devkitPro/libogc/include/gccore.h \
- C:/devkitPro/libogc/include/ogc/dsp.h \
- C:/devkitPro/libogc/include/gctypes.h \
- C:/devkitPro/libogc/include/ogc/aram.h \
- C:/devkitPro/libogc/include/gcbool.h \
- C:/devkitPro/libogc/include/ogc/arqueue.h \
- C:/devkitPro/libogc/include/ogc/lwp_queue.h \
- C:/devkitPro/libogc/include/ogc/aram.h \
- C:/devkitPro/libogc/include/ogc/arqmgr.h \
- C:/devkitPro/libogc/include/ogc/audio.h \
- C:/devkitPro/libogc/include/ogc/cache.h \
- C:/devkitPro/libogc/include/ogc/card.h \
- C:/devkitPro/libogc/include/ogc/cast.h \
- C:/devkitPro/libogc/include/ogc/color.h \
- C:/devkitPro/libogc/include/ogc/consol.h \
- C:/devkitPro/libogc/include/ogc/gx_struct.h \
- C:/devkitPro/libogc/include/ogc/dvd.h \
- C:/devkitPro/libogc/include/ogc/disc_io.h \
- C:/devkitPro/libogc/include/ogc/exi.h \
- C:/devkitPro/libogc/include/ogc/gu.h \
- C:/devkitPro/libogc/include/ogc/gx.h \
- C:/devkitPro/libogc/include/ogc/lwp.h \
- C:/devkitPro/libogc/include/ogc/gu.h \
- C:/devkitPro/libogc/include/ogc/si.h \
- C:/devkitPro/libogc/include/ogc/gx_struct.h \
- C:/devkitPro/libogc/include/ogc/irq.h \
- C:/devkitPro/libogc/include/ogc/context.h \
- C:/devkitPro/libogc/include/ogc/lwp.h \
- C:/devkitPro/libogc/include/ogc/mutex.h \
- C:/devkitPro/libogc/include/ogc/message.h \
- C:/devkitPro/libogc/include/ogc/semaphore.h \
- C:/devkitPro/libogc/include/ogc/pad.h \
- C:/devkitPro/libogc/include/ogc/tpl.h \
- C:/devkitPro/libogc/include/ogc/gx.h \
- C:/devkitPro/libogc/include/ogc/system.h \
- C:/devkitPro/libogc/include/gcutil.h \
- C:/devkitPro/libogc/include/ogc/video.h \
- C:/devkitPro/libogc/include/ogc/video_types.h \
- C:/devkitPro/libogc/include/ogc/usbgecko.h \
- C:/devkitPro/libogc/include/ogc/video_types.h \
- C:/devkitPro/libogc/include/ogc/texconv.h \
- C:/devkitPro/libogc/include/ogc/ipc.h \
- C:/devkitPro/libogc/include/ogc/sha.h \
- C:/devkitPro/libogc/include/ogc/aes.h \
- C:/devkitPro/libogc/include/ogc/es.h \
- C:/devkitPro/libogc/include/ogc/stm.h \
- C:/devkitPro/libogc/include/ogc/ios.h \
- C:/devkitPro/libogc/include/ogc/usb.h \
- C:/devkitPro/libogc/include/ogc/isfs.h \
- C:/devkitPro/libogc/include/ogc/conf.h \
- C:/devkitPro/libogc/include/ogc/usbstorage.h \
- C:/devkitPro/libogc/include/ogc/mutex.h \
- C:/devkitPro/libogc/include/ogc/system.h \
- C:/devkitPro/libogc/include/ogc/wiilaunch.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB__lib.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB__inline.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_clipping.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_collision.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_fbComplex.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_fbGX.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_fbSimple.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_handle.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_pixel.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_settings.h \
- C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h \
- C:/devkitPro/libogc/include/wiiuse/wpad.h \
- C:/devkitPro/libogc/include/wiiuse/wiiuse.h \
- C:/devkitPro/libogc/include/bte/bte.h \
- C:/devkitPro/libogc/include/bte/bd_addr.h \
- C:/devkitPro/libogc/include/ogc/tpl.h C:/devkitPro/libogc/include/fat.h \
- C:/devkitPro/libogc/include/libfatversion.h \
- C:/Users/xavie/Source/Repos/GD-Wii/build/player_png.h \
- C:/Users/xavie/Source/Repos/GD-Wii/build/GJ_square02_png.h
-C:/devkitPro/portlibs/wii/include/grrlib.h:
-C:/devkitPro/libogc/include/gccore.h:
-C:/devkitPro/libogc/include/ogc/dsp.h:
-C:/devkitPro/libogc/include/gctypes.h:
-C:/devkitPro/libogc/include/ogc/aram.h:
-C:/devkitPro/libogc/include/gcbool.h:
-C:/devkitPro/libogc/include/ogc/arqueue.h:
-C:/devkitPro/libogc/include/ogc/lwp_queue.h:
-C:/devkitPro/libogc/include/ogc/aram.h:
-C:/devkitPro/libogc/include/ogc/arqmgr.h:
-C:/devkitPro/libogc/include/ogc/audio.h:
-C:/devkitPro/libogc/include/ogc/cache.h:
-C:/devkitPro/libogc/include/ogc/card.h:
-C:/devkitPro/libogc/include/ogc/cast.h:
-C:/devkitPro/libogc/include/ogc/color.h:
-C:/devkitPro/libogc/include/ogc/consol.h:
-C:/devkitPro/libogc/include/ogc/gx_struct.h:
-C:/devkitPro/libogc/include/ogc/dvd.h:
-C:/devkitPro/libogc/include/ogc/disc_io.h:
-C:/devkitPro/libogc/include/ogc/exi.h:
-C:/devkitPro/libogc/include/ogc/gu.h:
-C:/devkitPro/libogc/include/ogc/gx.h:
-C:/devkitPro/libogc/include/ogc/lwp.h:
-C:/devkitPro/libogc/include/ogc/gu.h:
-C:/devkitPro/libogc/include/ogc/si.h:
-C:/devkitPro/libogc/include/ogc/gx_struct.h:
-C:/devkitPro/libogc/include/ogc/irq.h:
-C:/devkitPro/libogc/include/ogc/context.h:
-C:/devkitPro/libogc/include/ogc/lwp.h:
-C:/devkitPro/libogc/include/ogc/mutex.h:
-C:/devkitPro/libogc/include/ogc/message.h:
-C:/devkitPro/libogc/include/ogc/semaphore.h:
-C:/devkitPro/libogc/include/ogc/pad.h:
-C:/devkitPro/libogc/include/ogc/tpl.h:
-C:/devkitPro/libogc/include/ogc/gx.h:
-C:/devkitPro/libogc/include/ogc/system.h:
-C:/devkitPro/libogc/include/gcutil.h:
-C:/devkitPro/libogc/include/ogc/video.h:
-C:/devkitPro/libogc/include/ogc/video_types.h:
-C:/devkitPro/libogc/include/ogc/usbgecko.h:
-C:/devkitPro/libogc/include/ogc/video_types.h:
-C:/devkitPro/libogc/include/ogc/texconv.h:
-C:/devkitPro/libogc/include/ogc/ipc.h:
-C:/devkitPro/libogc/include/ogc/sha.h:
-C:/devkitPro/libogc/include/ogc/aes.h:
-C:/devkitPro/libogc/include/ogc/es.h:
-C:/devkitPro/libogc/include/ogc/stm.h:
-C:/devkitPro/libogc/include/ogc/ios.h:
-C:/devkitPro/libogc/include/ogc/usb.h:
-C:/devkitPro/libogc/include/ogc/isfs.h:
-C:/devkitPro/libogc/include/ogc/conf.h:
-C:/devkitPro/libogc/include/ogc/usbstorage.h:
-C:/devkitPro/libogc/include/ogc/mutex.h:
-C:/devkitPro/libogc/include/ogc/system.h:
-C:/devkitPro/libogc/include/ogc/wiilaunch.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB__lib.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB__inline.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_clipping.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_collision.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_fbComplex.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_fbGX.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_fbSimple.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_handle.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_pixel.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_settings.h:
-C:/devkitPro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h:
-C:/devkitPro/libogc/include/wiiuse/wpad.h:
-C:/devkitPro/libogc/include/wiiuse/wiiuse.h:
-C:/devkitPro/libogc/include/bte/bte.h:
-C:/devkitPro/libogc/include/bte/bd_addr.h:
-C:/devkitPro/libogc/include/ogc/tpl.h:
-C:/devkitPro/libogc/include/fat.h:
-C:/devkitPro/libogc/include/libfatversion.h:
-C:/Users/xavie/Source/Repos/GD-Wii/build/player_png.h:
-C:/Users/xavie/Source/Repos/GD-Wii/build/GJ_square02_png.h:
+main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
+ /opt/devkitpro/portlibs/ppc/include/grrlib.h \
+ /opt/devkitpro/libogc/include/gccore.h \
+ /opt/devkitpro/libogc/include/ogc/dsp.h \
+ /opt/devkitpro/libogc/include/gctypes.h \
+ /opt/devkitpro/libogc/include/ogc/aram.h \
+ /opt/devkitpro/libogc/include/gcbool.h \
+ /opt/devkitpro/libogc/include/ogc/arqueue.h \
+ /opt/devkitpro/libogc/include/ogc/lwp_queue.h \
+ /opt/devkitpro/libogc/include/ogc/aram.h \
+ /opt/devkitpro/libogc/include/ogc/arqmgr.h \
+ /opt/devkitpro/libogc/include/ogc/audio.h \
+ /opt/devkitpro/libogc/include/ogc/cache.h \
+ /opt/devkitpro/libogc/include/ogc/card.h \
+ /opt/devkitpro/libogc/include/ogc/cast.h \
+ /opt/devkitpro/libogc/include/ogc/color.h \
+ /opt/devkitpro/libogc/include/ogc/consol.h \
+ /opt/devkitpro/libogc/include/ogc/gx_struct.h \
+ /opt/devkitpro/libogc/include/ogc/dvd.h \
+ /opt/devkitpro/libogc/include/ogc/disc_io.h \
+ /opt/devkitpro/libogc/include/ogc/exi.h \
+ /opt/devkitpro/libogc/include/ogc/gu.h \
+ /opt/devkitpro/libogc/include/ogc/gx.h \
+ /opt/devkitpro/libogc/include/ogc/lwp.h \
+ /opt/devkitpro/libogc/include/ogc/gu.h \
+ /opt/devkitpro/libogc/include/ogc/si.h \
+ /opt/devkitpro/libogc/include/ogc/gx_struct.h \
+ /opt/devkitpro/libogc/include/ogc/irq.h \
+ /opt/devkitpro/libogc/include/ogc/context.h \
+ /opt/devkitpro/libogc/include/ogc/lwp.h \
+ /opt/devkitpro/libogc/include/ogc/mutex.h \
+ /opt/devkitpro/libogc/include/ogc/message.h \
+ /opt/devkitpro/libogc/include/ogc/semaphore.h \
+ /opt/devkitpro/libogc/include/ogc/pad.h \
+ /opt/devkitpro/libogc/include/ogc/tpl.h \
+ /opt/devkitpro/libogc/include/ogc/gx.h \
+ /opt/devkitpro/libogc/include/ogc/system.h \
+ /opt/devkitpro/libogc/include/gcutil.h \
+ /opt/devkitpro/libogc/include/ogc/video.h \
+ /opt/devkitpro/libogc/include/ogc/video_types.h \
+ /opt/devkitpro/libogc/include/ogc/usbgecko.h \
+ /opt/devkitpro/libogc/include/ogc/video_types.h \
+ /opt/devkitpro/libogc/include/ogc/texconv.h \
+ /opt/devkitpro/libogc/include/ogc/ipc.h \
+ /opt/devkitpro/libogc/include/ogc/sha.h \
+ /opt/devkitpro/libogc/include/ogc/aes.h \
+ /opt/devkitpro/libogc/include/ogc/es.h \
+ /opt/devkitpro/libogc/include/ogc/stm.h \
+ /opt/devkitpro/libogc/include/ogc/ios.h \
+ /opt/devkitpro/libogc/include/ogc/usb.h \
+ /opt/devkitpro/libogc/include/ogc/isfs.h \
+ /opt/devkitpro/libogc/include/ogc/conf.h \
+ /opt/devkitpro/libogc/include/ogc/usbstorage.h \
+ /opt/devkitpro/libogc/include/ogc/mutex.h \
+ /opt/devkitpro/libogc/include/ogc/system.h \
+ /opt/devkitpro/libogc/include/ogc/wiilaunch.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__lib.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__inline.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_collision.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbComplex.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbGX.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbSimple.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_handle.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_settings.h \
+ /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h \
+ /opt/devkitpro/libogc/include/wiiuse/wpad.h \
+ /opt/devkitpro/libogc/include/wiiuse/wiiuse.h \
+ /opt/devkitpro/libogc/include/bte/bte.h \
+ /opt/devkitpro/libogc/include/bte/bd_addr.h \
+ /opt/devkitpro/libogc/include/ogc/tpl.h \
+ /opt/devkitpro/libogc/include/fat.h \
+ /opt/devkitpro/libogc/include/libfatversion.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii/build/player_png.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii/build/GJ_square02_png.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii//include/Object.h \
+ /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h
+/opt/devkitpro/portlibs/ppc/include/grrlib.h:
+/opt/devkitpro/libogc/include/gccore.h:
+/opt/devkitpro/libogc/include/ogc/dsp.h:
+/opt/devkitpro/libogc/include/gctypes.h:
+/opt/devkitpro/libogc/include/ogc/aram.h:
+/opt/devkitpro/libogc/include/gcbool.h:
+/opt/devkitpro/libogc/include/ogc/arqueue.h:
+/opt/devkitpro/libogc/include/ogc/lwp_queue.h:
+/opt/devkitpro/libogc/include/ogc/aram.h:
+/opt/devkitpro/libogc/include/ogc/arqmgr.h:
+/opt/devkitpro/libogc/include/ogc/audio.h:
+/opt/devkitpro/libogc/include/ogc/cache.h:
+/opt/devkitpro/libogc/include/ogc/card.h:
+/opt/devkitpro/libogc/include/ogc/cast.h:
+/opt/devkitpro/libogc/include/ogc/color.h:
+/opt/devkitpro/libogc/include/ogc/consol.h:
+/opt/devkitpro/libogc/include/ogc/gx_struct.h:
+/opt/devkitpro/libogc/include/ogc/dvd.h:
+/opt/devkitpro/libogc/include/ogc/disc_io.h:
+/opt/devkitpro/libogc/include/ogc/exi.h:
+/opt/devkitpro/libogc/include/ogc/gu.h:
+/opt/devkitpro/libogc/include/ogc/gx.h:
+/opt/devkitpro/libogc/include/ogc/lwp.h:
+/opt/devkitpro/libogc/include/ogc/gu.h:
+/opt/devkitpro/libogc/include/ogc/si.h:
+/opt/devkitpro/libogc/include/ogc/gx_struct.h:
+/opt/devkitpro/libogc/include/ogc/irq.h:
+/opt/devkitpro/libogc/include/ogc/context.h:
+/opt/devkitpro/libogc/include/ogc/lwp.h:
+/opt/devkitpro/libogc/include/ogc/mutex.h:
+/opt/devkitpro/libogc/include/ogc/message.h:
+/opt/devkitpro/libogc/include/ogc/semaphore.h:
+/opt/devkitpro/libogc/include/ogc/pad.h:
+/opt/devkitpro/libogc/include/ogc/tpl.h:
+/opt/devkitpro/libogc/include/ogc/gx.h:
+/opt/devkitpro/libogc/include/ogc/system.h:
+/opt/devkitpro/libogc/include/gcutil.h:
+/opt/devkitpro/libogc/include/ogc/video.h:
+/opt/devkitpro/libogc/include/ogc/video_types.h:
+/opt/devkitpro/libogc/include/ogc/usbgecko.h:
+/opt/devkitpro/libogc/include/ogc/video_types.h:
+/opt/devkitpro/libogc/include/ogc/texconv.h:
+/opt/devkitpro/libogc/include/ogc/ipc.h:
+/opt/devkitpro/libogc/include/ogc/sha.h:
+/opt/devkitpro/libogc/include/ogc/aes.h:
+/opt/devkitpro/libogc/include/ogc/es.h:
+/opt/devkitpro/libogc/include/ogc/stm.h:
+/opt/devkitpro/libogc/include/ogc/ios.h:
+/opt/devkitpro/libogc/include/ogc/usb.h:
+/opt/devkitpro/libogc/include/ogc/isfs.h:
+/opt/devkitpro/libogc/include/ogc/conf.h:
+/opt/devkitpro/libogc/include/ogc/usbstorage.h:
+/opt/devkitpro/libogc/include/ogc/mutex.h:
+/opt/devkitpro/libogc/include/ogc/system.h:
+/opt/devkitpro/libogc/include/ogc/wiilaunch.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__lib.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__inline.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_collision.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbComplex.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbGX.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbSimple.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_handle.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_settings.h:
+/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h:
+/opt/devkitpro/libogc/include/wiiuse/wpad.h:
+/opt/devkitpro/libogc/include/wiiuse/wiiuse.h:
+/opt/devkitpro/libogc/include/bte/bte.h:
+/opt/devkitpro/libogc/include/bte/bd_addr.h:
+/opt/devkitpro/libogc/include/ogc/tpl.h:
+/opt/devkitpro/libogc/include/fat.h:
+/opt/devkitpro/libogc/include/libfatversion.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii/build/player_png.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii/build/GJ_square02_png.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii//include/Object.h:
+/Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h:
