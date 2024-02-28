@@ -1,5 +1,5 @@
-main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
- /opt/devkitpro/portlibs/ppc/include/grrlib.h \
+main.o: /Users/kevinburns/GDWii/src/main.cpp \
+ /opt/devkitpro/portlibs/wii/include/grrlib.h \
  /opt/devkitpro/libogc/include/gccore.h \
  /opt/devkitpro/libogc/include/ogc/dsp.h \
  /opt/devkitpro/libogc/include/gctypes.h \
@@ -54,17 +54,17 @@ main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
  /opt/devkitpro/libogc/include/ogc/mutex.h \
  /opt/devkitpro/libogc/include/ogc/system.h \
  /opt/devkitpro/libogc/include/ogc/wiilaunch.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__lib.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__inline.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_collision.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbComplex.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbGX.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbSimple.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_handle.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_settings.h \
- /opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB__lib.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB__inline.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_clipping.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_collision.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_fbComplex.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_fbGX.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_fbSimple.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_handle.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_pixel.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_settings.h \
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h \
  /opt/devkitpro/libogc/include/wiiuse/wpad.h \
  /opt/devkitpro/libogc/include/wiiuse/wiiuse.h \
  /opt/devkitpro/libogc/include/bte/bte.h \
@@ -72,14 +72,15 @@ main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
  /opt/devkitpro/libogc/include/ogc/tpl.h \
  /opt/devkitpro/libogc/include/fat.h \
  /opt/devkitpro/libogc/include/libfatversion.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii/build/player_png.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii/build/player2_png.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii/build/GJ_square02_png.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii/build/FreeMonoBold_ttf.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii//include/Object.h \
- /Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h
-/opt/devkitpro/portlibs/ppc/include/grrlib.h:
+ /Users/kevinburns/GDWii//include/images.h \
+ /Users/kevinburns/GDWii/build/player_png.h \
+ /Users/kevinburns/GDWii/build/player2_png.h \
+ /Users/kevinburns/GDWii/build/GJ_square02_png.h \
+ /Users/kevinburns/GDWii/build/FreeMonoBold_ttf.h \
+ /Users/kevinburns/GDWii//include/font_renderer.h \
+ /Users/kevinburns/GDWii//include/vector.h \
+ /Users/kevinburns/GDWii//include/vector.h
+/opt/devkitpro/portlibs/wii/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:
 /opt/devkitpro/libogc/include/gctypes.h:
@@ -134,17 +135,17 @@ main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
 /opt/devkitpro/libogc/include/ogc/mutex.h:
 /opt/devkitpro/libogc/include/ogc/system.h:
 /opt/devkitpro/libogc/include/ogc/wiilaunch.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__lib.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB__inline.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_clipping.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_collision.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbComplex.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbGX.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_fbSimple.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_handle.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_pixel.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_settings.h:
-/opt/devkitpro/portlibs/ppc/include/grrlib/GRRLIB_texSetup.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB__lib.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB__inline.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_clipping.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_collision.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_fbComplex.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_fbGX.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_fbSimple.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_handle.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_pixel.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_settings.h:
+/opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h:
 /opt/devkitpro/libogc/include/wiiuse/wpad.h:
 /opt/devkitpro/libogc/include/wiiuse/wiiuse.h:
 /opt/devkitpro/libogc/include/bte/bte.h:
@@ -152,10 +153,11 @@ main.o: /Users/kevinburns/geometrydash-wii/GD-Wii/src/main.cpp \
 /opt/devkitpro/libogc/include/ogc/tpl.h:
 /opt/devkitpro/libogc/include/fat.h:
 /opt/devkitpro/libogc/include/libfatversion.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii/build/player_png.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii/build/player2_png.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii/build/GJ_square02_png.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii/build/FreeMonoBold_ttf.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii//include/Object.h:
-/Users/kevinburns/geometrydash-wii/GD-Wii//include/Vector2.h:
+/Users/kevinburns/GDWii//include/images.h:
+/Users/kevinburns/GDWii/build/player_png.h:
+/Users/kevinburns/GDWii/build/player2_png.h:
+/Users/kevinburns/GDWii/build/GJ_square02_png.h:
+/Users/kevinburns/GDWii/build/FreeMonoBold_ttf.h:
+/Users/kevinburns/GDWii//include/font_renderer.h:
+/Users/kevinburns/GDWii//include/vector.h:
+/Users/kevinburns/GDWii//include/vector.h:
