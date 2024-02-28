@@ -79,6 +79,7 @@ main.o: /Users/kevinburns/GDWii/src/main.cpp \
  /Users/kevinburns/GDWii/build/FreeMonoBold_ttf.h \
  /Users/kevinburns/GDWii//include/font_renderer.h \
  /Users/kevinburns/GDWii//include/vector.h \
+ /Users/kevinburns/GDWii//include/image_renderer.h \
  /Users/kevinburns/GDWii//include/vector.h
 /opt/devkitpro/portlibs/wii/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
@@ -160,4 +161,5 @@ main.o: /Users/kevinburns/GDWii/src/main.cpp \
 /Users/kevinburns/GDWii/build/FreeMonoBold_ttf.h:
 /Users/kevinburns/GDWii//include/font_renderer.h:
 /Users/kevinburns/GDWii//include/vector.h:
+/Users/kevinburns/GDWii//include/image_renderer.h:
 /Users/kevinburns/GDWii//include/vector.h:

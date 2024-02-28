@@ -17,6 +17,7 @@
 
 // Custom Includes
 #include "font_renderer.h"
+#include "image_renderer.h"
 #include "vector.h"
 
 int main(int argc, char* argv[]) {
@@ -26,9 +27,11 @@ int main(int argc, char* argv[]) {
 	WPAD_Init();
 	WPAD_SetDataFormat(WPAD_CHAN_0, WPAD_FMT_BTNS_ACC_IR);
 
+	GRRLIB_texImg* playerSprite = GRRLIB_LoadTexturePNG(player2_png);
 	GRRLIB_ttfFont* freeMonoBold = GRRLIB_LoadTTF(FreeMonoBold_ttf, FreeMonoBold_ttf_size);
 
 	GDWii::FontRenderer fontRenderer = GDWii::FontRenderer();
+	GDWii::ImageRenderer imageRenderer = GDWii::ImageRenderer();
 
 	srand(time(NULL));
 
@@ -41,7 +44,8 @@ int main(int argc, char* argv[]) {
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
-		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "Hello Font Renderer", 24, 0xB30F15 | 0xF);
+		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "Hello Font Renderer", 24, WHITE);
+		imageRenderer.RenderImage(playerSprite, GDWii::Vector(0, 0), 0, GDWii::Vector(1, 1), WHITE);
 
 		GRRLIB_Render();
 	}
