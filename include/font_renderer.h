@@ -27,6 +27,14 @@
 namespace GDWii {
     class FontRenderer {
     public:
+        /*
+        Render Text to the Screen
+        @param position Where the text is placed on the screen
+        @param font The GRRLIB Font Object
+        @param text The Text
+        @param fontSize The Text Size
+        @param color The Color of the Text (Colors pre-defined in font_renderer.h)
+        */
         void RenderToScreen(GDWii::Vector position, GRRLIB_ttfFont* font, std::string text, int fontSize, u32 color) {
             GRRLIB_PrintfTTF(position.x, position.y, font, text.c_str(), fontSize, color);
         }
