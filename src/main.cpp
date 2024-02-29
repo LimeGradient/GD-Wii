@@ -36,16 +36,18 @@ int main(int argc, char* argv[]) {
 	srand(time(NULL));
 
 	while (1) {
+		ir_t ir;
 		WPAD_SetVRes(0, 640, 480);
 		WPAD_ScanPads();
 		u32 wpaddown = WPAD_ButtonsDown(0);
 		u32 wpadheld = WPAD_ButtonsHeld(0);
-		WPAD_IR(WPAD_CHAN_0, &ir1);
+		WPAD_IR(WPAD_CHAN_0, &ir);
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "Hello Font Renderer", 24, WHITE);
 		imageRenderer.RenderImage(playerSprite);
+		imageRenderer.PlotWiimoteIR(ir, LIME);
 
 		GRRLIB_Render();
 	}

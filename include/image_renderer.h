@@ -31,7 +31,12 @@ namespace GDWii {
         void RenderImage(GRRLIB_texImg* img, GDWii::Vector position, float rotationAngle, GDWii::Vector scale, u32 color) {
             GRRLIB_DrawImg(position.x, position.y, img, rotationAngle, scale.x, scale.y, color);
         }
-        
+        void PlotWiimoteIR(ir_t ir, u32 color) {
+            GRRLIB_Plot(ir.sx, ir.sy, color);
+            GRRLIB_Plot(ir.sx + 1, ir.sy, color);
+            GRRLIB_Plot(ir.sx, ir.sy + 1, color);
+            GRRLIB_Plot(ir.sx + 1, ir.sy + 1, color);
+        }
     };
 }
 
