@@ -28,6 +28,7 @@ int main(int argc, char* argv[]) {
 	WPAD_SetDataFormat(WPAD_CHAN_0, WPAD_FMT_BTNS_ACC_IR);
 
 	GDWii::Sprite playerSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(player2_png), GDWii::Vector(100, 100), 0, GDWii::Vector(1, 1), WHITE);
+	GDWii::Sprite backgroundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(50, 50), 0, GDWii::Vector(1, 1), WHITE);
 	GRRLIB_ttfFont* freeMonoBold = GRRLIB_LoadTTF(FreeMonoBold_ttf, FreeMonoBold_ttf_size);
 
 	GDWii::FontRenderer fontRenderer = GDWii::FontRenderer();
@@ -45,7 +46,8 @@ int main(int argc, char* argv[]) {
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
-		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "Hello Font Renderer", 24, WHITE);
+		imageRenderer.RenderImage(backgroundSprite);
+		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		imageRenderer.RenderImage(playerSprite);
 		imageRenderer.PlotWiimoteIR(ir, LIME);
 

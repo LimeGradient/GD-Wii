@@ -4,6 +4,7 @@
 #include "player_png.h"
 #include "player2_png.h"
 #include "GJ_square02_png.h"
+#include "background_png.h"
 
 #include "FreeMonoBold_ttf.h"
 
