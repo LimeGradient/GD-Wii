@@ -1,3 +1,7 @@
 GD-Wii.dol
 GD-Wii.elf
 build/
+*.dol
+*.elf
+GDWii.dol
+GDWii.elf

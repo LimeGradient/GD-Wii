@@ -11,6 +11,7 @@ namespace GDWii
             x = posX;
             y = posY;
         }
+        Vector() = default;
     };
 } // namespace GDWii
 

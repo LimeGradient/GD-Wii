@@ -2,7 +2,8 @@
 A backport of Geometry Dash for the Nintendo Wii. Might be coming to other platforms eventually.
 
 # Collaborators
-<ul>
-    <li>LimeGradient</li>
-    <li>ExplodingWaffles</li>
-</ul>
+- LimeGradient
+- ExplodingWaffles
+
+# Special Thanks
+- Croozington (For Sticking With Us Through Our 2 Month Downtime)
