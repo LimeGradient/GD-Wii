@@ -52,7 +52,8 @@ int main(int argc, char* argv[]) {
 
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
-		player.velocity.x += 0.5f;
+		player.velocity.x += 3.0f;
+		player.SetGravity(3);
 		imageRenderer.PlotWiimoteIR(ir, LIME); // Make a square where the wii cursor is
 
 		GRRLIB_Render();

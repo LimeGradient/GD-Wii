@@ -12,9 +12,18 @@ namespace GDWii {
             sprite = spr;
         }
         Player() = default;
+        /*
+        Initialize the Player Object
+        @param imageRenderer The Image Renderer
+        */
         void Init(GDWii::ImageRenderer imageRenderer) { 
             imageRenderer.RenderImage(sprite.image, velocity, sprite.rotationAngle, sprite.scale, sprite.color);
         }
+
+        void SetGravity(float modifier) {
+            velocity.y += modifier;
+        }
+        
     };
 }
 
