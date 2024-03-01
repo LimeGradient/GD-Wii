@@ -21,6 +21,12 @@
 #include "vector.h"
 #include "player.h"
 
+namespace GDWii {
+	void RenderGround(GDWii::Sprite ground, GDWii::ImageRenderer imageRenderer) {
+		imageRenderer.RenderImage(ground);
+	}
+}
+
 int main(int argc, char* argv[]) {
 	ir_t ir1;
 
@@ -30,6 +36,7 @@ int main(int argc, char* argv[]) {
 
 	GDWii::Sprite playerSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(player2_png), GDWii::Vector(100, 100), 0, GDWii::Vector(1, 1), WHITE); // The Player Sprite
 	GDWii::Sprite backgroundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(50, 50), 0, GDWii::Vector(1, 1), BLUE); // The Background Sprite
+	GDWii::Sprite groundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(48,384), 0, GDWii::Vector(2, 1), FUCHSIA);
 	GRRLIB_ttfFont* freeMonoBold = GRRLIB_LoadTTF(FreeMonoBold_ttf, FreeMonoBold_ttf_size);
 
 	GDWii::FontRenderer fontRenderer = GDWii::FontRenderer();
@@ -49,6 +56,7 @@ int main(int argc, char* argv[]) {
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
 		imageRenderer.RenderImage(backgroundSprite); // Leave this in the very back of code so everything gets rendered in front
+		GDWii::RenderGround(groundSprite, imageRenderer);
 
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
