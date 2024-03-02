@@ -3,6 +3,8 @@
 
 #include <grrlib.h>
 #include <wiiuse/wpad.h>
+#include <vector>
+#include <string>
 
 #include "vector.h"
 #include "font_renderer.h"
@@ -27,12 +29,14 @@ namespace GDWii {
 
     class ImageRenderer {
     public:
+        std::vector<GDWii::Sprite> sprites;
         /*
         Render a Image to the Screen
         @param sprite The Sprite Object to Render
         */
         void RenderImage(GDWii::Sprite sprite) {
             GRRLIB_DrawImg(sprite.position.x, sprite.position.y, sprite.image, sprite.rotationAngle, sprite.scale.x, sprite.scale.y, sprite.color);
+            sprites.push_back(sprite);
         }
         /*
         Render a Image to the Screen
@@ -44,6 +48,7 @@ namespace GDWii {
         */
         void RenderImage(GRRLIB_texImg* img, GDWii::Vector position, float rotationAngle, GDWii::Vector scale = GDWii::Vector(1, 1), u32 color = WHITE) {
             GRRLIB_DrawImg(position.x, position.y, img, rotationAngle, scale.x, scale.y, color);
+            sprites.push_back(GDWii::Sprite(img, position, rotationAngle, scale, color));
         }
         /*
         Render the WiiMote IR Cursor on Screen

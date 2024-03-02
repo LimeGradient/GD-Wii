@@ -4,7 +4,7 @@
 #include <string.h>
 #include <malloc.h>
 #include <math.h>
-#include <list>
+#include <vector>
 
 // Wii Includes
 #include <grrlib.h>
@@ -20,6 +20,7 @@
 #include "image_renderer.h"
 #include "vector.h"
 #include "player.h"
+#include "globed/connection.h"
 
 namespace GDWii {
 	void RenderGround(GDWii::Sprite ground, GDWii::ImageRenderer imageRenderer) {
@@ -42,6 +43,9 @@ int main(int argc, char* argv[]) {
 	GDWii::FontRenderer fontRenderer = GDWii::FontRenderer();
 	GDWii::ImageRenderer imageRenderer = GDWii::ImageRenderer();
 	GDWii::Player player = GDWii::Player(playerSprite);
+
+	GDWii::Network networkManager = GDWii::Network();
+	networkManager.init();
 
 	srand(time(NULL));
 
