@@ -1,3 +1,8 @@
+/*
+This is for future Netcode for GDWii
+Does not work right now but gameplay comes first
+*/
+
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
@@ -10,18 +15,6 @@
 #include <network.h>
 #include <wiiuse/wpad.h>
 #include <debug.h>
-
-const static char http_200[] = "HTTP/1.1 200 OK\r\n";
-
-const static char indexdata[] = "<html> \
-                               <head><title>A test page</title></head> \
-                               <body> \
-                               This small test page has had %d hits. \
-                               </body> \
-                               </html>";
-
-const static char http_html_hdr[] = "Content-type: text/html\r\n\r\n";
-const static char http_get_index[] = "GET / HTTP/1.1\r\n";
 
 void *httpd(void* arg) {
     int sock, csock;
@@ -73,14 +66,6 @@ void *httpd(void* arg) {
 					memset (temp, 0, 1026);
 					ret = net_recv (csock, temp, 1024, 0);
 					printf("Received %d bytes\n", ret);
-
-					if ( !strncmp( temp, http_get_index, strlen(http_get_index) ) ) {
-						hits++;
-						net_send(csock, http_200, strlen(http_200), 0);
-						net_send(csock, http_html_hdr, strlen(http_html_hdr), 0);
-						sprintf(temp, indexdata, hits);
-						net_send(csock, temp, strlen(temp), 0);
-					}
 
 					net_close (csock);
 

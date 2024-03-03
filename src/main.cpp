@@ -24,7 +24,7 @@
 
 namespace GDWii {
 	void RenderGround(GDWii::Sprite ground, GDWii::ImageRenderer imageRenderer) {
-		imageRenderer.RenderImage(ground);
+		imageRenderer.RenderImage(ground, true);
 	}
 }
 
@@ -44,8 +44,7 @@ int main(int argc, char* argv[]) {
 	GDWii::ImageRenderer imageRenderer = GDWii::ImageRenderer();
 	GDWii::Player player = GDWii::Player(playerSprite);
 
-	GDWii::Network networkManager = GDWii::Network();
-	networkManager.init();
+	// GDWii::Network networkManager = GDWii::Network();
 
 	srand(time(NULL));
 
@@ -59,13 +58,17 @@ int main(int argc, char* argv[]) {
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
-		imageRenderer.RenderImage(backgroundSprite); // Leave this in the very back of code so everything gets rendered in front
+		imageRenderer.RenderImage(backgroundSprite, false); // Leave this in the very back of code so everything gets rendered in front
 		GDWii::RenderGround(groundSprite, imageRenderer);
 
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
 		player.velocity.x += 3.0f;
 		player.SetGravity(3);
+		player.CheckCollisions(imageRenderer);
+
+		fontRenderer.RenderToScreen(GDWii::Vector(200, 300), freeMonoBold, std::to_string(player.sprite.position.y), 24, WHITE);
+
 		imageRenderer.PlotWiimoteIR(ir, LIME); // Make a square where the wii cursor is
 
 		GRRLIB_Render();

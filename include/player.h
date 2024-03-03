@@ -24,6 +24,13 @@ namespace GDWii {
             velocity.y += modifier;
         }
         
+        void CheckCollisions(GDWii::ImageRenderer imageRenderer) {
+            for (GDWii::Sprite s : imageRenderer.sprites) {
+                if (sprite.position.y == s.position.y) {
+                    sprite.position.y = s.position.y;
+                }
+            }
+        }
     };
 }
 

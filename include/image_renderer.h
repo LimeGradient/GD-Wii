@@ -34,9 +34,10 @@ namespace GDWii {
         Render a Image to the Screen
         @param sprite The Sprite Object to Render
         */
-        void RenderImage(GDWii::Sprite sprite) {
+        void RenderImage(GDWii::Sprite sprite, bool physicsObj) {
             GRRLIB_DrawImg(sprite.position.x, sprite.position.y, sprite.image, sprite.rotationAngle, sprite.scale.x, sprite.scale.y, sprite.color);
-            sprites.push_back(sprite);
+            if (physicsObj)
+                sprites.push_back(sprite);
         }
         /*
         Render a Image to the Screen
@@ -46,9 +47,10 @@ namespace GDWii {
         @param scale The scale of the image (Set to 1, 1 by default)
         @param color The color filter of the image (Set to WHITE by default)
         */
-        void RenderImage(GRRLIB_texImg* img, GDWii::Vector position, float rotationAngle, GDWii::Vector scale = GDWii::Vector(1, 1), u32 color = WHITE) {
+        void RenderImage(GRRLIB_texImg* img, GDWii::Vector position, float rotationAngle, GDWii::Vector scale = GDWii::Vector(1, 1), u32 color = WHITE, bool physicsObj = false) {
             GRRLIB_DrawImg(position.x, position.y, img, rotationAngle, scale.x, scale.y, color);
-            sprites.push_back(GDWii::Sprite(img, position, rotationAngle, scale, color));
+            if (physicsObj)
+                sprites.push_back(GDWii::Sprite(img, position, rotationAngle, scale, color));
         }
         /*
         Render the WiiMote IR Cursor on Screen
