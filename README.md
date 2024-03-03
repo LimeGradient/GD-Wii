@@ -6,6 +6,10 @@ A backport of Geometry Dash for the Nintendo Wii. Might be coming to other platf
 2. Open Dolphin Emulator
 3. Drag `GDWii.dol` into Dolphin
 
+# How to Build
+1. Download [devkitpro](https://devkitpro.org/wiki/Getting_Started) and [GRRLIB](https://github.com/GRRLIB/GRRLIB) and install them
+2. Clone the git repo
+3. Run `build.bat`
 
 # Collaborators
 - LimeGradient
