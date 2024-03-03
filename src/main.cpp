@@ -63,11 +63,11 @@ int main(int argc, char* argv[]) {
 
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
-		player.velocity.x += 3.0f;
-		player.SetGravity(3);
-		player.CheckCollisions(imageRenderer);
+		player.SetGravity(4);
+		
+		if (wpaddown & WPAD_BUTTON_A) player.Jump();
 
-		fontRenderer.RenderToScreen(GDWii::Vector(200, 300), freeMonoBold, std::to_string(player.sprite.position.y), 24, WHITE);
+		fontRenderer.RenderToScreen(GDWii::Vector(200, 300), freeMonoBold, std::to_string(player.velocity.y), 24, WHITE);
 
 		imageRenderer.PlotWiimoteIR(ir, LIME); // Make a square where the wii cursor is
 

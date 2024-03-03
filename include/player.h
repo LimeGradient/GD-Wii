@@ -8,6 +8,8 @@ namespace GDWii {
     public:
         GDWii::Vector velocity;
         GDWii::Sprite sprite;
+        float grav;
+        bool onGround;
         Player(GDWii::Sprite spr) {
             sprite = spr;
         }
@@ -18,17 +20,24 @@ namespace GDWii {
         */
         void Init(GDWii::ImageRenderer imageRenderer) { 
             imageRenderer.RenderImage(sprite.image, velocity, sprite.rotationAngle, sprite.scale, sprite.color);
+
+            velocity.x += 2.f;
+
+            if (velocity.y >= 381) { // Hardcoded Y Ground Value goes BRRRRR
+                velocity.y = 378;
+                onGround = true;
+            }
         }
 
         void SetGravity(float modifier) {
             velocity.y += modifier;
+            grav = modifier;
         }
-        
-        void CheckCollisions(GDWii::ImageRenderer imageRenderer) {
-            for (GDWii::Sprite s : imageRenderer.sprites) {
-                if (sprite.position.y == s.position.y) {
-                    sprite.position.y = s.position.y;
-                }
+
+        void Jump() {
+            if (onGround) {
+                velocity.y -= grav * 12;
+                onGround = false;
             }
         }
     };
