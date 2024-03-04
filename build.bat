@@ -1,3 +1,3 @@
 make clean
 make
-start GDWii.dol
+dolphin.exe.lnk -d D:\Coding\GDWii\GDWii.dol

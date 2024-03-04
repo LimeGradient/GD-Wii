@@ -18,13 +18,13 @@ namespace GDWii {
         Initialize the Player Object
         @param imageRenderer The Image Renderer
         */
-        void Init(GDWii::ImageRenderer imageRenderer) { 
+        void Init(GDWii::ImageRenderer imageRenderer) {
+            velocity.x = 200; 
             imageRenderer.RenderImage(sprite.image, velocity, sprite.rotationAngle, sprite.scale, sprite.color);
 
-            velocity.x += 2.f;
-
+            this->SetGravity(1.5);
             if (velocity.y >= 381) { // Hardcoded Y Ground Value goes BRRRRR
-                velocity.y = 378;
+                velocity.y = 380;
                 onGround = true;
             }
         }
@@ -36,7 +36,7 @@ namespace GDWii {
 
         void Jump() {
             if (onGround) {
-                velocity.y -= grav * 12;
+                velocity.y -= grav * 36;
                 onGround = false;
             }
         }

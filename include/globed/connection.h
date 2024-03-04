@@ -90,15 +90,23 @@ namespace GDWii {
             httpd(arg);
         }
 
-        void init() {
+        void init(GDWii::FontRenderer fontRenderer)
+        {
             interface = if_config(localip, netmask, gateway, true, 20);
-            if (interface >= 0) {
+            std::stringstream msg;
+            if (interface >= 0)
+            {
                 printf("network configured, IP: %s, gw: %s, mask: %s\n", localip, gateway, netmask);
-                LWP_CreateThread(&httd_handle, httpd, localip, NULL, 64*1024, 50);
-            } else {
-                printf("network config failed\n");
+                msg << "network configured, IP: " << localip << ", gw: " << gateway << ", mask: " << netmask;
+                fontRenderer.RenderToScreen(GDWii::Vector(50, 150), fontRenderer.freeMonoBold, msg.str(), 18, WHITE);
+                LWP_CreateThread(&httd_handle, httpd, localip, NULL, 64 * 1024, 50);
             }
-        }
+            else
+            {
+                printf("network config failed\n");
+                fontRenderer.RenderToScreen(GDWii::Vector(50, 150), fontRenderer.freeMonoBold, "network config failed", 18, WHITE);
+            }
+        };
     };
 }
 

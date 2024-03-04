@@ -12,6 +12,11 @@
 #include <wiiuse/wpad.h>
 #include <ogc/tpl.h>
 #include <fat.h>
+#include <ogcsys.h>
+#include <network.h>
+#include <wiiuse/wpad.h>
+#include <debug.h>
+#include <sstream>
 
 #include "images.h"
 
@@ -22,8 +27,8 @@
 #include "player.h"
 #include "globed/connection.h"
 
-GDWii::Sprite groundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(48,384), 0, GDWii::Vector(2.5, 1), FUCHSIA);
-GDWii::Sprite groundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(560,384), 0, GDWii::Vector(2.5, 1), FUCHSIA);
+GDWii::Sprite groundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(48,384), 0, GDWii::Vector(4, 1), FUCHSIA);
+GDWii::Sprite groundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(560,384), 0, GDWii::Vector(4, 1), FUCHSIA);
 
 GDWii::Sprite backgroundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(50, 50), 0, GDWii::Vector(1, 1), BLUE); // The Background Sprite
 GDWii::Sprite backgroundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(560, 50), 0, GDWii::Vector(1, 1), BLUE);
@@ -52,10 +57,10 @@ namespace GDWii {
 		backgroundSpriteBuffer.position.x -= 0.5f;
 
 		if (backgroundSprite.position.x <= -512) {
-			backgroundSprite.position.x = 560;
+			backgroundSprite.position.x = 512;
 		}
 		if (backgroundSpriteBuffer.position.x <= -512) {
-			backgroundSpriteBuffer.position.x = 560;
+			backgroundSpriteBuffer.position.x = 512;
 		}
 	}
 }
@@ -78,6 +83,8 @@ int main(int argc, char* argv[]) {
 
 	srand(time(NULL));
 
+	player.velocity.y = 200;
+
 	while (1) {
 		ir_t ir;
 		WPAD_SetVRes(0, 640, 480);
@@ -86,6 +93,8 @@ int main(int argc, char* argv[]) {
 		u32 wpadheld = WPAD_ButtonsHeld(0);
 		WPAD_IR(WPAD_CHAN_0, &ir);
 
+		// networkManager.init(fontRenderer);
+
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
 		GDWii::RenderBackground(imageRenderer); // Leave this in the very back of code so everything gets rendered in front
@@ -93,12 +102,11 @@ int main(int argc, char* argv[]) {
 
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
-		player.SetGravity(4);
 		
 		if (wpaddown & WPAD_BUTTON_A) player.Jump();
+		if (wpaddown & WPAD_BUTTON_HOME ) exit(0);
 
-		fontRenderer.RenderToScreen(GDWii::Vector(200, 300), freeMonoBold, std::to_string(player.velocity.y), 24, WHITE);
-		fontRenderer.RenderToScreen(GDWii::Vector(200, 100), freeMonoBold, std::to_string(groundSprite.position.x), 24, WHITE);
+		fontRenderer.RenderToScreen(GDWii::Vector(50, 50), freeMonoBold, std::to_string(player.velocity.y), 16, WHITE);
 
 		imageRenderer.PlotWiimoteIR(ir, LIME); // Make a square where the wii cursor is
 

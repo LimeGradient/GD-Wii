@@ -24,6 +24,8 @@
 #define AQUA    0x00FFFFFF
 #define WHITE   0xFFFFFFFF
 
+#include "images.h"
+
 namespace GDWii {
     class FontRenderer {
     public:
@@ -38,6 +40,8 @@ namespace GDWii {
         void RenderToScreen(GDWii::Vector position, GRRLIB_ttfFont* font, std::string text, int fontSize, u32 color) {
             GRRLIB_PrintfTTF(position.x, position.y, font, text.c_str(), fontSize, color);
         }
+
+        GRRLIB_ttfFont* freeMonoBold = GRRLIB_LoadTTF(FreeMonoBold_ttf, FreeMonoBold_ttf_size);
     };
 }
 
