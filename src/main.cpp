@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
 	GDWii::ImageRenderer imageRenderer = GDWii::ImageRenderer();
 	GDWii::Player player = GDWii::Player(playerSprite);
 
-	// GDWii::Network networkManager = GDWii::Network();
+	GDWii::Network networkManager = GDWii::Network();
 
 	srand(time(NULL));
 
@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
 		u32 wpadheld = WPAD_ButtonsHeld(0);
 		WPAD_IR(WPAD_CHAN_0, &ir);
 
-		// networkManager.init(fontRenderer);
+		networkManager.init(fontRenderer);
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
