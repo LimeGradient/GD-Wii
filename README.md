@@ -1,3 +1,5 @@
+![Discord](https://img.shields.io/discord/1163267877462355968?label=Discord&logo=discord)
+
 # GD-Wii
 A backport of Geometry Dash for the Nintendo Wii. Might be coming to other platforms eventually.
 
