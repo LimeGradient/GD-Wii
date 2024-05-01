@@ -79,11 +79,11 @@ int main(int argc, char* argv[]) {
 	GDWii::ImageRenderer imageRenderer = GDWii::ImageRenderer();
 	GDWii::Player player = GDWii::Player(playerSprite);
 
-	GDWii::Network networkManager = GDWii::Network();
+	// GDWii::Network networkManager = GDWii::Network();
 
 	srand(time(NULL));
 
-	player.velocity.y = 200;
+	player.position.y = 385.f;
 
 	while (1) {
 		ir_t ir;
@@ -93,12 +93,17 @@ int main(int argc, char* argv[]) {
 		u32 wpadheld = WPAD_ButtonsHeld(0);
 		WPAD_IR(WPAD_CHAN_0, &ir);
 
-		networkManager.init(fontRenderer);
+		// networkManager.init(fontRenderer);
 
 		if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME) break; // Draw after this
 		GRRLIB_FillScreen(0x000000FF);
-		GDWii::RenderBackground(imageRenderer); // Leave this in the very back of code so everything gets rendered in front
+		GDWii::RenderBackground(imageRenderer);
 		GDWii::RenderGround(imageRenderer);
+
+		// imageRenderer.RenderImage(backgroundSprite, false);
+		// imageRenderer.RenderImage(backgroundSpriteBuffer, false);
+		// imageRenderer.RenderImage(groundSprite, true);
+		// imageRenderer.RenderImage(groundSpriteBuffer, true);
 
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
@@ -106,7 +111,7 @@ int main(int argc, char* argv[]) {
 		if (wpaddown & WPAD_BUTTON_A) player.Jump();
 		if (wpaddown & WPAD_BUTTON_HOME ) exit(0);
 
-		fontRenderer.RenderToScreen(GDWii::Vector(50, 50), freeMonoBold, std::to_string(player.velocity.y), 16, WHITE);
+		fontRenderer.RenderToScreen(GDWii::Vector(50, 50), freeMonoBold, std::to_string(player.position.y), 16, WHITE);
 
 		imageRenderer.PlotWiimoteIR(ir, LIME); // Make a square where the wii cursor is
 

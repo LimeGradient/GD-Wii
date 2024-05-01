@@ -63,6 +63,8 @@ namespace GDWii {
             GRRLIB_Plot(ir.sx, ir.sy + 1, color);
             GRRLIB_Plot(ir.sx + 1, ir.sy + 1, color);
         }
+
+        
     };
 }
 

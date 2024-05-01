@@ -6,7 +6,8 @@
 namespace GDWii {
     class Player {
     public:
-        GDWii::Vector velocity;
+        GDWii::Vector position = GDWii::Vector(200.f, 0.f);
+        GDWii::Vector velocity = GDWii::Vector(200.f, 0.f);
         GDWii::Sprite sprite;
         float grav;
         bool onGround;
@@ -19,24 +20,32 @@ namespace GDWii {
         @param imageRenderer The Image Renderer
         */
         void Init(GDWii::ImageRenderer imageRenderer) {
-            velocity.x = 200; 
-            imageRenderer.RenderImage(sprite.image, velocity, sprite.rotationAngle, sprite.scale, sprite.color);
+            imageRenderer.RenderImage(sprite.image, position, sprite.rotationAngle, sprite.scale, sprite.color);
+            // velocity.x += 2.5f;
 
-            this->SetGravity(1.5);
-            if (velocity.y >= 381) { // Hardcoded Y Ground Value goes BRRRRR
-                velocity.y = 380;
+            if (onGround || position.y >= 300)
+                this->SetGravity(.5f);
+            if (position.y >= 380) { // Hardcoded Y Ground Value goes BRRRRR
+                position.y = 380;
                 onGround = true;
             }
         }
 
         void SetGravity(float modifier) {
-            velocity.y += modifier;
+            position.y += velocity.y;
             grav = modifier;
+
+            if (position.y <= 300) velocity.y = velocity.y * -1;
+        }
+
+        void useVelocity() {
+            position.y += velocity.y;
         }
 
         void Jump() {
             if (onGround) {
-                velocity.y -= grav * 36;
+                float jumpVel = 2.f;
+                velocity.y -= jumpVel;
                 onGround = false;
             }
         }
