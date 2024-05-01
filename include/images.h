@@ -6,6 +6,7 @@
 #include "GJ_square02_png.h"
 #include "background_png.h"
 #include "ground_png.h"
+#include "dryout_mp3.h"
 
 #include "FreeMonoBold_ttf.h"
 

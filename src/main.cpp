@@ -5,6 +5,7 @@
 #include <malloc.h>
 #include <math.h>
 #include <vector>
+#include <sstream>
 
 // Wii Includes
 #include <grrlib.h>
@@ -16,7 +17,8 @@
 #include <network.h>
 #include <wiiuse/wpad.h>
 #include <debug.h>
-#include <sstream>
+#include <asndlib.h>
+#include <mp3player.h>
 
 #include "images.h"
 
@@ -25,13 +27,15 @@
 #include "image_renderer.h"
 #include "vector.h"
 #include "player.h"
+#include "audio.h"
+
 #include "globed/connection.h"
 
-GDWii::Sprite groundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(48,384), 0, GDWii::Vector(4, 1), FUCHSIA);
-GDWii::Sprite groundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(560,384), 0, GDWii::Vector(4, 1), FUCHSIA);
+GDWii::Sprite groundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(48,384), 0, GDWii::Vector(5, 1), FUCHSIA);
+GDWii::Sprite groundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(ground_png), GDWii::Vector(560,384), 0, GDWii::Vector(5, 1), FUCHSIA);
 
-GDWii::Sprite backgroundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(50, 50), 0, GDWii::Vector(1, 1), BLUE); // The Background Sprite
-GDWii::Sprite backgroundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(560, 50), 0, GDWii::Vector(1, 1), BLUE);
+GDWii::Sprite backgroundSprite = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(50, 50), 0, GDWii::Vector(2, 1), BLUE); // The Background Sprite
+GDWii::Sprite backgroundSpriteBuffer = GDWii::Sprite(GRRLIB_LoadTexturePNG(background_png), GDWii::Vector(560, 50), 0, GDWii::Vector(2, 1), BLUE);
 
 namespace GDWii {
 	void RenderGround(GDWii::ImageRenderer imageRenderer) {
@@ -42,10 +46,10 @@ namespace GDWii {
 		groundSpriteBuffer.position.x -= 1.f;
 
 		if (groundSprite.position.x <= -512) {
-			groundSprite.position.x = 560;
+			groundSprite.position.x = 500;
 		}
 		if (groundSpriteBuffer.position.x <= -512) {
-			groundSpriteBuffer.position.x = 560;
+			groundSpriteBuffer.position.x = 500;
 		}
 	}
 
@@ -78,12 +82,16 @@ int main(int argc, char* argv[]) {
 	GDWii::FontRenderer fontRenderer = GDWii::FontRenderer();
 	GDWii::ImageRenderer imageRenderer = GDWii::ImageRenderer();
 	GDWii::Player player = GDWii::Player(playerSprite);
+	GDWii::AudioEngine* audioEngine = new GDWii::AudioEngine();
 
 	// GDWii::Network networkManager = GDWii::Network();
 
 	srand(time(NULL));
 
 	player.position.y = 385.f;
+
+	audioEngine->SetVolume(50);
+	audioEngine->PlayMP3(dryout_mp3, dryout_mp3_size);
 
 	while (1) {
 		ir_t ir;
@@ -100,11 +108,6 @@ int main(int argc, char* argv[]) {
 		GDWii::RenderBackground(imageRenderer);
 		GDWii::RenderGround(imageRenderer);
 
-		// imageRenderer.RenderImage(backgroundSprite, false);
-		// imageRenderer.RenderImage(backgroundSpriteBuffer, false);
-		// imageRenderer.RenderImage(groundSprite, true);
-		// imageRenderer.RenderImage(groundSpriteBuffer, true);
-
 		fontRenderer.RenderToScreen(GDWii::Vector(200, 200), freeMonoBold, "GD but on the Wii", 24, WHITE);
 		player.Init(imageRenderer); // Quick way to move player
 		
@@ -112,6 +115,7 @@ int main(int argc, char* argv[]) {
 		if (wpaddown & WPAD_BUTTON_HOME ) exit(0);
 
 		fontRenderer.RenderToScreen(GDWii::Vector(50, 50), freeMonoBold, std::to_string(player.position.y), 16, WHITE);
+		fontRenderer.RenderToScreen(GDWii::Vector(50, 75), freeMonoBold, player.onGround ? "onGround: true" : "onGround: false", 16, WHITE);
 
 		imageRenderer.PlotWiimoteIR(ir, LIME); // Make a square where the wii cursor is
 

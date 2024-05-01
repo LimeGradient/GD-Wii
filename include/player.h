@@ -31,6 +31,13 @@ namespace GDWii {
             }
         }
 
+        /*
+        BEWARE
+        I have no fucking clue how jumping works
+        it just does
+        do NOT fuck with anything here
+        */
+
         void SetGravity(float modifier) {
             position.y += velocity.y;
             grav = modifier;

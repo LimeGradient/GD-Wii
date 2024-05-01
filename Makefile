@@ -33,7 +33,7 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:=	-lgrrlib -lfreetype -lbz2 -lpngu -lpng -ljpeg -lz -lfat -lwiiuse -lbte -logc -lm
+LIBS	:=	-lgrrlib -lfreetype -lbz2 -lpngu -lpng -ljpeg -lz -lfat -lwiiuse -lbte -lmad -lasnd -logc -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -159,6 +159,14 @@ $(OFILES_SOURCES) : $(HFILES)
 # This rule links in binary data with the .bmf extension
 #---------------------------------------------------------------------------------
 %.bmf.o	:	%.bmf
+#---------------------------------------------------------------------------------
+	@echo $(notdir $<)
+	$(bin2o)
+
+#---------------------------------------------------------------------------------
+# This rule links in binary data with the .mp3 extension
+#---------------------------------------------------------------------------------
+%.mp3.o	%_mp3.h :	%.mp3
 #---------------------------------------------------------------------------------
 	@echo $(notdir $<)
 	$(bin2o)
