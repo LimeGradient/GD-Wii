@@ -1,4 +1,4 @@
-#include "Game.hpp"
+#include "Game.h"
 
 #include <stdlib.h>
 
@@ -12,6 +12,8 @@ namespace GDWii {
     void Game::start() {
         GRRLIB_Init();
         WPAD_Init();
+
+        FontRenderer* fontRenderer = new FontRenderer();
 
         GRRLIB_ttfFont* font = GRRLIB_LoadTTF(FreeMonoBold_ttf, FreeMonoBold_ttf_size);
         

@@ -2,7 +2,7 @@
 
 #include <grrlib.h>
 
-#include "Types/Vector2.hpp"
+#include "Types/Vector2.h"
 
 #define BLACK   0x000000FF
 #define MAROON  0x800000FF

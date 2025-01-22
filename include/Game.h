@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Engine/FontRenderer.hpp"
+#include "Engine/FontRenderer.h"
 
 namespace GDWii {
     class Game {
@@ -12,6 +12,6 @@ namespace GDWii {
 
         void start();
         
-        FontRenderer* fontRenderer = new FontRenderer();
+        FontRenderer* fontRenderer;
     };
 }
